@@ -1,3 +1,5 @@
+VBot2
+====
 Language C#
 
 BOT for Wikidata and Wikipedia. Read and write on Wikidata and Wikipedia and have a useful list generator to generate list of Wikipedia page and Wikidata entity.
