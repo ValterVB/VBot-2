@@ -1360,9 +1360,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(202, 224);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.Size = new System.Drawing.Size(92, 13);
             this.label12.TabIndex = 9;
-            this.label12.Text = "Lint error";
+            this.label12.Text = "Lint error category";
             // 
             // textLintCat
             // 
