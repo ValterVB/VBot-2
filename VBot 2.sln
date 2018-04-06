@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VBot 2", "VBot 2\VBot 2.csproj", "{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Debug|x64.ActiveCfg = Debug|x64
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Debug|x64.Build.0 = Debug|x64
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Release|x64.ActiveCfg = Release|x64
+		{4BE4E80F-F1D5-40D9-90DB-A7E8CC3BEC50}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72D07211-B8DD-4537-9B90-33841F64B34D}
+	EndGlobalSection
+EndGlobal
