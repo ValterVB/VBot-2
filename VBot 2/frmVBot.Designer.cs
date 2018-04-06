@@ -141,6 +141,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.chkLintNS0 = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textLintCat = new System.Windows.Forms.TextBox();
             this.button32 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -161,9 +164,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnMove = new System.Windows.Forms.Button();
-            this.textLintCat = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.chkLintNS0 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabLabAndDescDump.SuspendLayout();
             this.tabLabAndDesc.SuspendLayout();
@@ -1345,6 +1345,33 @@
             this.tabPage12.Text = "Wikipedia Report";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // chkLintNS0
+            // 
+            this.chkLintNS0.AutoSize = true;
+            this.chkLintNS0.Location = new System.Drawing.Point(439, 245);
+            this.chkLintNS0.Name = "chkLintNS0";
+            this.chkLintNS0.Size = new System.Drawing.Size(67, 17);
+            this.chkLintNS0.TabIndex = 10;
+            this.chkLintNS0.Text = "Only ns0";
+            this.chkLintNS0.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(202, 224);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Lint error";
+            // 
+            // textLintCat
+            // 
+            this.textLintCat.Location = new System.Drawing.Point(202, 245);
+            this.textLintCat.Name = "textLintCat";
+            this.textLintCat.Size = new System.Drawing.Size(105, 20);
+            this.textLintCat.TabIndex = 8;
+            this.textLintCat.Text = "missing-end-tag";
+            // 
             // button32
             // 
             this.button32.Location = new System.Drawing.Point(13, 224);
@@ -1529,33 +1556,6 @@
             this.btnMove.Text = "<---- Move from Output to Input";
             this.btnMove.UseVisualStyleBackColor = true;
             this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
-            // 
-            // textLintCat
-            // 
-            this.textLintCat.Location = new System.Drawing.Point(202, 245);
-            this.textLintCat.Name = "textLintCat";
-            this.textLintCat.Size = new System.Drawing.Size(208, 20);
-            this.textLintCat.TabIndex = 8;
-            this.textLintCat.Text = "missing-end-tag";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(202, 224);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Lint error";
-            // 
-            // chkLintNS0
-            // 
-            this.chkLintNS0.AutoSize = true;
-            this.chkLintNS0.Location = new System.Drawing.Point(439, 245);
-            this.chkLintNS0.Name = "chkLintNS0";
-            this.chkLintNS0.Size = new System.Drawing.Size(67, 17);
-            this.chkLintNS0.TabIndex = 10;
-            this.chkLintNS0.Text = "Only ns0";
-            this.chkLintNS0.UseVisualStyleBackColor = true;
             // 
             // frmVBot
             // 
