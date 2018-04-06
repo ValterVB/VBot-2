@@ -6,4 +6,4 @@ BOT for Wikidata and Wikipedia. Read and write on Wikidata and Wikipedia and hav
 Tested with Visual Studio Community 2017
 Use .Net Framework 4.7.1
 Is necessary to have Newtonsoft.Json. You can install it with NuGet inside Visual Studio
-Is necessary to add manually a reference to System.Web for "HttpUtility.UrlEncode"# VBot-2Language C#
+Is necessary to add manually a reference to System.Web for "HttpUtility.UrlEncode"
