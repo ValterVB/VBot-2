@@ -68,11 +68,6 @@
             this.txtLabItem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAddLatinLabel = new System.Windows.Forms.Button();
-            this.tabAdminActivity = new System.Windows.Forms.TabPage();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.tabLists = new System.Windows.Forms.TabPage();
             this.button16 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -106,7 +101,6 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.CheckForF = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button30 = new System.Windows.Forms.Button();
@@ -116,15 +110,11 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtNumberOfItems = new System.Windows.Forms.TextBox();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.txtReplace = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
-            this.btnSiteMatrix = new System.Windows.Forms.Button();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.btnFixLabelConflict = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -141,7 +131,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.chkLintNS0 = new System.Windows.Forms.CheckBox();
+            this.chkLintNS01 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textLintCat = new System.Windows.Forms.TextBox();
             this.button32 = new System.Windows.Forms.Button();
@@ -153,6 +143,7 @@
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.button26 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
+            this.tabWD = new System.Windows.Forms.TabPage();
             this.statusMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -164,10 +155,13 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnMove = new System.Windows.Forms.Button();
+            this.btnCreatingItems = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.tabWP = new System.Windows.Forms.TabPage();
+            this.btnListLintError = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLabAndDescDump.SuspendLayout();
             this.tabLabAndDesc.SuspendLayout();
-            this.tabAdminActivity.SuspendLayout();
             this.tabLists.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -176,7 +170,9 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
+            this.tabWD.SuspendLayout();
             this.statusMain.SuspendLayout();
+            this.tabWP.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtIn
@@ -246,7 +242,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabLabAndDescDump);
             this.tabControl1.Controls.Add(this.tabLabAndDesc);
-            this.tabControl1.Controls.Add(this.tabAdminActivity);
             this.tabControl1.Controls.Add(this.tabLists);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -255,6 +250,8 @@
             this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Controls.Add(this.tabPage13);
             this.tabControl1.Controls.Add(this.tabPage14);
+            this.tabControl1.Controls.Add(this.tabWD);
+            this.tabControl1.Controls.Add(this.tabWP);
             this.tabControl1.Location = new System.Drawing.Point(667, 12);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -440,10 +437,10 @@
             this.tabLabAndDesc.Controls.Add(this.txtLabItem);
             this.tabLabAndDesc.Controls.Add(this.label5);
             this.tabLabAndDesc.Controls.Add(this.btnAddLatinLabel);
-            this.tabLabAndDesc.Location = new System.Drawing.Point(4, 40);
+            this.tabLabAndDesc.Location = new System.Drawing.Point(4, 22);
             this.tabLabAndDesc.Name = "tabLabAndDesc";
             this.tabLabAndDesc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLabAndDesc.Size = new System.Drawing.Size(577, 680);
+            this.tabLabAndDesc.Size = new System.Drawing.Size(577, 698);
             this.tabLabAndDesc.TabIndex = 1;
             this.tabLabAndDesc.Text = "Label & Description";
             // 
@@ -598,59 +595,6 @@
             this.btnAddLatinLabel.UseVisualStyleBackColor = true;
             this.btnAddLatinLabel.Click += new System.EventHandler(this.btnAddLatinLabel_Click);
             // 
-            // tabAdminActivity
-            // 
-            this.tabAdminActivity.Controls.Add(this.button24);
-            this.tabAdminActivity.Controls.Add(this.button22);
-            this.tabAdminActivity.Controls.Add(this.button21);
-            this.tabAdminActivity.Controls.Add(this.btnDelete);
-            this.tabAdminActivity.Location = new System.Drawing.Point(4, 40);
-            this.tabAdminActivity.Name = "tabAdminActivity";
-            this.tabAdminActivity.Size = new System.Drawing.Size(577, 680);
-            this.tabAdminActivity.TabIndex = 8;
-            this.tabAdminActivity.Text = "Admin Activity";
-            this.tabAdminActivity.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(215, 13);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(128, 37);
-            this.button24.TabIndex = 7;
-            this.button24.Text = "Undelete";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(17, 150);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(128, 37);
-            this.button22.TabIndex = 6;
-            this.button22.Text = "Move pages";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(17, 82);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(128, 37);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "Delete page";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(17, 13);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(128, 37);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete items";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // tabLists
             // 
             this.tabLists.Controls.Add(this.button16);
@@ -685,7 +629,6 @@
             this.tabLists.Controls.Add(this.button18);
             this.tabLists.Controls.Add(this.button9);
             this.tabLists.Controls.Add(this.button8);
-            this.tabLists.Controls.Add(this.button7);
             this.tabLists.Controls.Add(this.CheckForF);
             this.tabLists.Location = new System.Drawing.Point(4, 40);
             this.tabLists.Name = "tabLists";
@@ -978,16 +921,6 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(219, 579);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(178, 41);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "AWB typos";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // CheckForF
             // 
             this.CheckForF.Location = new System.Drawing.Point(25, 632);
@@ -1076,51 +1009,17 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.txtNumberOfItems);
-            this.tabPage3.Controls.Add(this.button31);
-            this.tabPage3.Controls.Add(this.button20);
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Controls.Add(this.txtReplace);
             this.tabPage3.Controls.Add(this.label33);
             this.tabPage3.Controls.Add(this.txtFind);
             this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Controls.Add(this.btnSiteMatrix);
             this.tabPage3.Location = new System.Drawing.Point(4, 40);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(577, 680);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Varie";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // txtNumberOfItems
-            // 
-            this.txtNumberOfItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumberOfItems.Location = new System.Drawing.Point(308, 387);
-            this.txtNumberOfItems.Name = "txtNumberOfItems";
-            this.txtNumberOfItems.Size = new System.Drawing.Size(66, 29);
-            this.txtNumberOfItems.TabIndex = 18;
-            this.txtNumberOfItems.Text = "0";
-            this.txtNumberOfItems.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(15, 385);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(287, 33);
-            this.button31.TabIndex = 17;
-            this.button31.Text = "Create new item";
-            this.button31.UseVisualStyleBackColor = true;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(15, 313);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(287, 33);
-            this.button20.TabIndex = 16;
-            this.button20.Text = "Periodic task";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // label34
             // 
@@ -1165,16 +1064,6 @@
             this.button15.Text = "Find and replace";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // btnSiteMatrix
-            // 
-            this.btnSiteMatrix.Location = new System.Drawing.Point(15, 245);
-            this.btnSiteMatrix.Name = "btnSiteMatrix";
-            this.btnSiteMatrix.Size = new System.Drawing.Size(287, 33);
-            this.btnSiteMatrix.TabIndex = 9;
-            this.btnSiteMatrix.Text = "SiteMatrix";
-            this.btnSiteMatrix.UseVisualStyleBackColor = true;
-            this.btnSiteMatrix.Click += new System.EventHandler(this.button13_Click);
             // 
             // tabPage10
             // 
@@ -1332,7 +1221,7 @@
             // 
             // tabPage12
             // 
-            this.tabPage12.Controls.Add(this.chkLintNS0);
+            this.tabPage12.Controls.Add(this.chkLintNS01);
             this.tabPage12.Controls.Add(this.label12);
             this.tabPage12.Controls.Add(this.textLintCat);
             this.tabPage12.Controls.Add(this.button32);
@@ -1345,15 +1234,15 @@
             this.tabPage12.Text = "Wikipedia Report";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // chkLintNS0
+            // chkLintNS01
             // 
-            this.chkLintNS0.AutoSize = true;
-            this.chkLintNS0.Location = new System.Drawing.Point(439, 245);
-            this.chkLintNS0.Name = "chkLintNS0";
-            this.chkLintNS0.Size = new System.Drawing.Size(67, 17);
-            this.chkLintNS0.TabIndex = 10;
-            this.chkLintNS0.Text = "Only ns0";
-            this.chkLintNS0.UseVisualStyleBackColor = true;
+            this.chkLintNS01.AutoSize = true;
+            this.chkLintNS01.Location = new System.Drawing.Point(439, 245);
+            this.chkLintNS01.Name = "chkLintNS01";
+            this.chkLintNS01.Size = new System.Drawing.Size(67, 17);
+            this.chkLintNS01.TabIndex = 10;
+            this.chkLintNS01.Text = "Only ns0";
+            this.chkLintNS01.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -1463,6 +1352,17 @@
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
+            // tabWD
+            // 
+            this.tabWD.Controls.Add(this.btnDelete);
+            this.tabWD.Controls.Add(this.btnCreatingItems);
+            this.tabWD.Location = new System.Drawing.Point(4, 40);
+            this.tabWD.Name = "tabWD";
+            this.tabWD.Size = new System.Drawing.Size(577, 680);
+            this.tabWD.TabIndex = 14;
+            this.tabWD.Text = "Wikidata";
+            this.tabWD.UseVisualStyleBackColor = true;
+            // 
             // statusMain
             // 
             this.statusMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1557,6 +1457,45 @@
             this.btnMove.UseVisualStyleBackColor = true;
             this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
+            // btnCreatingItems
+            // 
+            this.btnCreatingItems.Location = new System.Drawing.Point(12, 13);
+            this.btnCreatingItems.Name = "btnCreatingItems";
+            this.btnCreatingItems.Size = new System.Drawing.Size(156, 23);
+            this.btnCreatingItems.TabIndex = 1;
+            this.btnCreatingItems.Text = "Create new empty items";
+            this.btnCreatingItems.UseVisualStyleBackColor = true;
+            this.btnCreatingItems.Click += new System.EventHandler(this.btnCreatingItems_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(12, 51);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(265, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete items (need an Admin user)";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // tabWP
+            // 
+            this.tabWP.Controls.Add(this.btnListLintError);
+            this.tabWP.Location = new System.Drawing.Point(4, 40);
+            this.tabWP.Name = "tabWP";
+            this.tabWP.Size = new System.Drawing.Size(577, 680);
+            this.tabWP.TabIndex = 15;
+            this.tabWP.Text = "Wikiepdia";
+            this.tabWP.UseVisualStyleBackColor = true;
+            // 
+            // btnListLintError
+            // 
+            this.btnListLintError.Location = new System.Drawing.Point(14, 12);
+            this.btnListLintError.Name = "btnListLintError";
+            this.btnListLintError.Size = new System.Drawing.Size(156, 23);
+            this.btnListLintError.TabIndex = 2;
+            this.btnListLintError.Text = "Lint errors";
+            this.btnListLintError.UseVisualStyleBackColor = true;
+            this.btnListLintError.Click += new System.EventHandler(this.btnListLintError_Click);
+            // 
             // frmVBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1582,7 +1521,6 @@
             this.tabLabAndDescDump.PerformLayout();
             this.tabLabAndDesc.ResumeLayout(false);
             this.tabLabAndDesc.PerformLayout();
-            this.tabAdminActivity.ResumeLayout(false);
             this.tabLists.ResumeLayout(false);
             this.tabLists.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -1596,8 +1534,10 @@
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
+            this.tabWD.ResumeLayout(false);
             this.statusMain.ResumeLayout(false);
             this.statusMain.PerformLayout();
+            this.tabWP.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1633,8 +1573,6 @@
         private System.Windows.Forms.Button btnCheckStdDesc;
         private System.Windows.Forms.Button btnWriteCategory;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TabPage tabAdminActivity;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.StatusStrip statusMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusMessage;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusUser;
@@ -1653,12 +1591,10 @@
         private System.Windows.Forms.TextBox txtReportSitelink;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnSitelinkFromItem;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnWriteTemplate;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button btnSiteMatrix;
         private System.Windows.Forms.TabPage tabPage12;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.TabPage tabPage13;
@@ -1725,21 +1661,20 @@
         private System.Windows.Forms.TextBox txtWikiLang;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.TextBox txtNumberOfItems;
-        private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textLintCat;
-        private System.Windows.Forms.CheckBox chkLintNS0;
+        private System.Windows.Forms.CheckBox chkLintNS01;
+        private System.Windows.Forms.TabPage tabWD;
+        private System.Windows.Forms.Button btnCreatingItems;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TabPage tabWP;
+        private System.Windows.Forms.Button btnListLintError;
     }
 }
 

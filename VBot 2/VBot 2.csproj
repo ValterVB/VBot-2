@@ -92,11 +92,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmPeriodicTasks.cs">
+    <Compile Include="frmLintErrors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPeriodicTasks.Designer.cs">
-      <DependentUpon>frmPeriodicTasks.cs</DependentUpon>
+    <Compile Include="frmLintErrors.Designer.cs">
+      <DependentUpon>frmLintErrors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateEmtyItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateEmtyItems.Designer.cs">
+      <DependentUpon>frmCreateEmtyItems.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWriteTemplate.cs">
       <SubType>Form</SubType>
@@ -157,8 +163,11 @@
     <Compile Include="Utility.cs" />
     <Compile Include="Site.cs" />
     <Compile Include="Wikipedia.cs" />
-    <EmbeddedResource Include="frmPeriodicTasks.resx">
-      <DependentUpon>frmPeriodicTasks.cs</DependentUpon>
+    <EmbeddedResource Include="frmLintErrors.resx">
+      <DependentUpon>frmLintErrors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateEmtyItems.resx">
+      <DependentUpon>frmCreateEmtyItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWriteTemplate.resx">
       <DependentUpon>frmWriteTemplate.cs</DependentUpon>

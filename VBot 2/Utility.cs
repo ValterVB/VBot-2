@@ -666,7 +666,7 @@ namespace VBot
         /// <returns>Compiled data value</returns>
         public static Datavalue CreateDataValue(string value, TypeData type)
         {
-            // TODO Add missing datatype
+            // TODO: Add missing datatype
             string[] val = value.Split('|');
             switch (type)
             {
@@ -742,9 +742,7 @@ namespace VBot
             return lang;
         }
 
-        /// <summary>
-        /// Return a dictionary for a specific template
-        /// </summary>
+        /// <summary>Return the dictionary for a specific template</summary>
         /// <param name="Text">Text with template</param>
         /// <param name="TemplateName">Name of template </param>
         /// <returns>Dictionary with parameter name, parameter value</returns>
@@ -778,7 +776,7 @@ namespace VBot
                             string[] split = fields[idx2].Split(new char[] { '=' }, 2);
                             if (split.Count() == 2)
                             {
-                                // TODO Check for double parameter
+                                // TODO: Check for double parameter
                                 Template.Add(split[0].Trim(), split[1].Trim());
                                 Cont += 1;
                             }
@@ -809,9 +807,7 @@ namespace VBot
                 return "";
             }
         }
-        /// <summary>
-        /// Delete piped from wikilink
-        /// </summary>
+        /// <summary>Delete piped from wikilink</summary>
         /// <param name="Text">Text with wikilink with piped</param>
         /// <returns>Text with wikilink without piped</returns>
         private static string DelPipe(string Text)
@@ -844,9 +840,7 @@ namespace VBot
             return Text;
         }
 
-        /// <summary>
-        /// Clean of wikitext: del comment, nowiki and ref
-        /// </summary>
+        /// <summary>Clean of wikitext: del comment, nowiki and ref</summary>
         /// <param name="Text">Wikitext</param>
         /// <returns>Clenaed wikitext</returns>
         private static string CleanWiki(string Text)
@@ -863,9 +857,7 @@ namespace VBot
             return result;
         }
 
-        /// <summary>
-        /// Find position of a section
-        /// </summary>
+        /// <summary>Find position of a section</summary>
         /// <param name="Text">Wiki text</param>
         /// <param name="Section">Section to find with level (ex. == External link ==)</param>
         /// <returns>Position</returns>
@@ -876,9 +868,7 @@ namespace VBot
             return match.Index;
         }
 
-        /// <summary>
-        /// Delete disambiguation from a title
-        /// </summary>
+        /// <summary>Delete disambiguation from a title</summary>
         /// <param name="Title">Title</param>
         /// <param name="Disambig">Must be , or ()</param>
         /// <returns>Title without disambiguation</returns>
@@ -1130,13 +1120,13 @@ namespace VBot
                 foreach (Match match in matches)
                 {
                     tmpDic.Add(match.Groups[4].Value, match.Groups[6].Value);
-                    //match.Groups[1].Value);
-                    Console.Write("");
                 }       
             }
             return tmpDic;
         }
 
+        /// <summary>Get Wikimedia sites list</summary>
+        /// <returns>String tab separated of all the site of Wikimedia, one site for row</returns>
         public static string SiteMatrix()
         {
             WebClient client = new WebClient();

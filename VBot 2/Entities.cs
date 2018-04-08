@@ -13,6 +13,7 @@ namespace VBot
         public Entity entity { get; set; }
     }
 
+    /// <summary>Main class for the list of item</summary>
     class Entities
     {
         public Dictionary<string, Entity> entities { get; set; } //If the key is != title is a redirect
@@ -279,6 +280,7 @@ namespace VBot
     }
 
     #region Datavalue
+    //TODO: Add missing datatype
     public class Datavalue //Abstract class
     {
         private string _Json = "";

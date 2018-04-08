@@ -240,6 +240,34 @@ namespace VBot
             Form.SetData("https://www.wikidata.org", userAdm, passwordAdm);
         }
 
+        private void btnCreatingItems_Click(object sender, EventArgs e)
+        {
+            toolStripStatusMessage.Text = "";
+            if (user == "" || password == "")
+            {
+                toolStripStatusMessage.Text = "Need a valid BOT user and or password";
+                return;
+            }
+
+            frmCreateEmtyItems Form = new frmCreateEmtyItems();
+            Form.Show(this);
+            Form.SetData("https://www.wikidata.org", user, password);
+        }
+
+        private void btnListLintError_Click(object sender, EventArgs e)
+        {
+            toolStripStatusMessage.Text = "";
+            if (user == "" || password == "")
+            {
+                toolStripStatusMessage.Text = "Need a valid BOT user and or password";
+                return;
+            }
+
+            frmLintErrors Form = new frmLintErrors();
+            Form.Show(this);
+            Form.SetData(user, password);
+        }
+
         // ==============================================================================================
 
         /// <summary>Try to fix label conflict, the list musb be: Q1 Q2 lan tab separated</summary>
@@ -573,13 +601,6 @@ namespace VBot
             txtOut.Text = Utility.SitelinkFromItem(txtIn.Text, txtReportSitelink.Text, user, password);
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Utility.AWBtypos(user, password);
-        }
-
-
-
         private void button8_Click(object sender, EventArgs e)
         {
             ClearTextBox();
@@ -604,12 +625,6 @@ namespace VBot
             }
             txtOut.Text = Wikipedia.Purge("https://it.wikipedia.org", txtIn.Text, user, password);
             txtMessage.Text = "Completed";
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            string res = Utility.SiteMatrix();
-            txtOut.Text = res;
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -1311,46 +1326,6 @@ namespace VBot
             }
         }
 
-        private void button20_Click(object sender, EventArgs e)
-        {
-            ClearTextBox();
-            toolStripStatusMessage.Text = "";
-            if (user == "")
-            {
-                toolStripStatusMessage.Text = "Need a valid BOT user and or password";
-                return;
-            }
-            frmPeriodicTasks Form = new frmPeriodicTasks();
-            Form.Show();
-            Form.SetData(user, password);
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            string[] lines = txtIn.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            Site WP = new Site("https://it.wikipedia.org", userAdm, passwordAdm);
-
-            for (int idx = 0; idx < lines.Count(); idx++)
-            {
-                string resp = WP.DeletePage(lines[idx], "([[WP:IMMEDIATA|C11]]) File doppio e orfano, non funzionante, vuoto o presente anche su Commons");
-                txtOut.AppendText(resp + Environment.NewLine);
-            }
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            string[] lines = txtIn.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-
-            Site WP = new Site("https://it.wikipedia.org", user, password);
-            for (int idx = 0; idx < lines.Count(); idx++)
-            {
-
-                string[] tmp = lines[idx].Split('\t');
-                string resp = WP.Move(tmp[0], tmp[1], "BOT: Nome corretto: [[Discussioni_progetto:Coordinamento/Categorie#Categorie_artistiche.2Fgeografiche]]", true, false);
-                txtOut.AppendText(resp + Environment.NewLine);
-            }
-        }
-
         private void button23_Click(object sender, EventArgs e)
         {
             Site WP = new Site("https://it.wikipedia.org", user, password);
@@ -1384,41 +1359,6 @@ namespace VBot
                 }
             }
             txtOut.Text = res;
-        }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-            Site WP = new Site("https://it.wikipedia.org", user, password);
-
-            string[] lines = txtIn.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            string tmpList = "";
-            for (int idx = 0; idx < lines.Count(); idx++)
-            {
-                tmpList += lines[idx] + "|";
-            }
-            tmpList = tmpList.Remove(tmpList.LastIndexOf("|"));
-            List<string> list = Utility.SplitInChunk(tmpList, "|", 500);
-
-            string result = "";
-            foreach (string s in list)
-            {
-                result += ListGenerator.AreDisambiguation(WP, s);
-            }
-            txtOut.Text = result.Replace("|", Environment.NewLine);
-
-
-            //result += ListGenerator.AreDisambiguation(WP, s);
-
-
-            //Site WD = new Site("https://www.wikidata.org", userAdm, passwordAdm);
-
-            //string[] lines = txtIn.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            //string res = "";
-            //for (int idx = 0; idx < lines.Count(); idx++)
-            //{
-            //    res+= lines[idx] + WD.Undelete(lines[idx], "") + Environment.NewLine ;
-            //}
-            //txtOut.Text = res;
         }
 
         private void button25_Click(object sender, EventArgs e)
@@ -1566,9 +1506,9 @@ namespace VBot
                 Entities EntityList = JsonConvert.DeserializeObject<Entities>(strJson, new DatavalueConverter());
                 Entity item = EntityList.entities[tmp];
                 string claim = item.claims["P179"][0].id;
-                if (item.claims["P179"][0].qualifiers.ContainsKey("P155"))
+                if (item.claims["P179"][0].qualifiers.ContainsKey("P1545"))
                 {
-                    string qualifierHash = item.claims["P179"][0].qualifiers["P155"][0].hash;
+                    string qualifierHash = item.claims["P179"][0].qualifiers["P1545"][0].hash;
                     string res = WD.RemoveQualifier(claim, qualifierHash);
                     if (res.IndexOf("\"success\":1") != -1)
                     {
@@ -1586,41 +1526,19 @@ namespace VBot
             }
         }
 
-        private void button31_Click(object sender, EventArgs e)
-        {
-            Site WD = new Site("https://www.wikidata.org", user, password);
-
-            Regex regex = new Regex("\"id\":\"(Q\\d+)\",", RegexOptions.Compiled);
-
-            int cont = 0;
-            Int32.TryParse(txtNumberOfItems.Text, out cont);
-
-            string result = "";
-            if (cont!=0)
-            {
-                for (int i = 0; i < cont; i++)
-                {
-                    string res = WD.CreateItem();
-                    Match match = regex.Match(res);
-                    if (match.Success) { result += match.Groups[1].Value + Environment.NewLine ; }
-                }
-            }
-            txtOut.Text = result;
-        }
-
         private void button32_Click(object sender, EventArgs e)
         {
             // Risultato in https://it.wikipedia.org/wiki/Utente:ValterVB/123
 
             Site WP = new Site("https://it.wikipedia.org", user, password);
             string res = "";
-            if (chkLintNS0.Checked)
+            if (chkLintNS01.Checked)
             {
-                res = WP.LintError("missing-end-tag","0");
+                res = WP.LintError("missing-end-tag","50","0");
             }
             else
             {
-                res = WP.LintError("missing-end-tag");
+                res = WP.LintError("missing-end-tag","50");
             }
 
             string Out = "";

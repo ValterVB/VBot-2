@@ -240,6 +240,13 @@ namespace VBot
             return result;
         }
 
+        /// <summary>Move a page grom one title to another</summary>
+        /// <param name="from">Title from</param>
+        /// <param name="to">Title to</param>
+        /// <param name="reason">It's the edit object</param>
+        /// <param name="movetalk">If true move also the talk</param>
+        /// <param name="noredirect">If true don't create redirect</param>
+        /// <returns>API result</returns>
         public string Move(string from, string to, string reason, Boolean movetalk, Boolean noredirect)
         {
             string request = "";
@@ -258,6 +265,11 @@ namespace VBot
             return result;
         }
 
+
+        /// <summary>Undelete a a page on Wikipedia</summary>
+        /// <param name="title">Title of the page to be undelete</param>
+        /// <param name="reason">It's the edit object</param>
+        /// <returns>API result</returns>
         public string Undelete(string title, string reason)
         {
             string request = "";
@@ -266,16 +278,16 @@ namespace VBot
             return result;
         }
 
-        public string LintError(string lntcategories)
+        public string LintError(string lntcategories,string limit)
         {
-            string request = "action=query&format=xml&list=linterrors&lntcategories=" + lntcategories + "&lntlimit=100";
+            string request = "action=query&format=xml&list=linterrors&lntcategories=" + lntcategories + "&lntlimit=" + limit;
             string result = PostRequest(_url + _api, request);
             return result;
         }
 
-        public string LintError(string lntcategories,string ns)
+        public string LintError(string lntcategories,string ns, string limit)
         {
-            string request = "action=query&format=xml&list=linterrors&lntcategories=" + lntcategories + "&lntlimit=100&lntnamespace=" + ns;
+            string request = "action=query&format=xml&list=linterrors&lntcategories=" + lntcategories + "&lntlimit="+limit + "&lntnamespace=" + ns;
             string result = PostRequest(_url + _api, request);
             return result;
         }
