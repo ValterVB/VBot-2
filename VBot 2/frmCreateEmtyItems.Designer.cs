@@ -79,7 +79,7 @@
             this.toolStripStatusLabelSite});
             this.statusStrip1.Location = new System.Drawing.Point(0, 561);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(805, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(526, 22);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.TabStop = true;
             this.statusStrip1.Text = "statusStrip1";
@@ -93,7 +93,7 @@
             this.toolStripStatusLabelProgress.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusLabelProgress.Name = "toolStripStatusLabelProgress";
             this.toolStripStatusLabelProgress.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.toolStripStatusLabelProgress.Size = new System.Drawing.Size(390, 17);
+            this.toolStripStatusLabelProgress.Size = new System.Drawing.Size(111, 17);
             this.toolStripStatusLabelProgress.Spring = true;
             this.toolStripStatusLabelProgress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 583);
+            this.ClientSize = new System.Drawing.Size(526, 583);
             this.Controls.Add(this.btnCreateItem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNumberOfItems);

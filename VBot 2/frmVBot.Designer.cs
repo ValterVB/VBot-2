@@ -110,6 +110,11 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMeseBD = new System.Windows.Forms.TextBox();
+            this.txtAnnoBD = new System.Windows.Forms.TextBox();
+            this.btnBilancioDemografico = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.txtReplace = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -131,10 +136,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.chkLintNS01 = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textLintCat = new System.Windows.Forms.TextBox();
-            this.button32 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.tabPage13 = new System.Windows.Forms.TabPage();
@@ -144,6 +145,10 @@
             this.button26 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.tabWD = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCreatingItems = new System.Windows.Forms.Button();
+            this.tabWP = new System.Windows.Forms.TabPage();
+            this.btnListLintError = new System.Windows.Forms.Button();
             this.statusMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -155,10 +160,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnMove = new System.Windows.Forms.Button();
-            this.btnCreatingItems = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.tabWP = new System.Windows.Forms.TabPage();
-            this.btnListLintError = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLabAndDescDump.SuspendLayout();
             this.tabLabAndDesc.SuspendLayout();
@@ -171,13 +173,13 @@
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.tabWD.SuspendLayout();
-            this.statusMain.SuspendLayout();
             this.tabWP.SuspendLayout();
+            this.statusMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtIn
             // 
-            this.txtIn.Location = new System.Drawing.Point(12, 24);
+            this.txtIn.Location = new System.Drawing.Point(15, 24);
             this.txtIn.MaxLength = 0;
             this.txtIn.Multiline = true;
             this.txtIn.Name = "txtIn";
@@ -437,10 +439,10 @@
             this.tabLabAndDesc.Controls.Add(this.txtLabItem);
             this.tabLabAndDesc.Controls.Add(this.label5);
             this.tabLabAndDesc.Controls.Add(this.btnAddLatinLabel);
-            this.tabLabAndDesc.Location = new System.Drawing.Point(4, 22);
+            this.tabLabAndDesc.Location = new System.Drawing.Point(4, 40);
             this.tabLabAndDesc.Name = "tabLabAndDesc";
             this.tabLabAndDesc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLabAndDesc.Size = new System.Drawing.Size(577, 698);
+            this.tabLabAndDesc.Size = new System.Drawing.Size(577, 680);
             this.tabLabAndDesc.TabIndex = 1;
             this.tabLabAndDesc.Text = "Label & Description";
             // 
@@ -1009,6 +1011,12 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.txtMeseBD);
+            this.tabPage3.Controls.Add(this.txtAnnoBD);
+            this.tabPage3.Controls.Add(this.btnBilancioDemografico);
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Controls.Add(this.txtReplace);
             this.tabPage3.Controls.Add(this.label33);
@@ -1020,6 +1028,50 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Varie";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(327, 265);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 13);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Mese";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(263, 265);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Anno";
+            // 
+            // txtMeseBD
+            // 
+            this.txtMeseBD.Location = new System.Drawing.Point(330, 287);
+            this.txtMeseBD.Name = "txtMeseBD";
+            this.txtMeseBD.Size = new System.Drawing.Size(60, 20);
+            this.txtMeseBD.TabIndex = 18;
+            this.txtMeseBD.Text = "11";
+            // 
+            // txtAnnoBD
+            // 
+            this.txtAnnoBD.Location = new System.Drawing.Point(264, 287);
+            this.txtAnnoBD.Name = "txtAnnoBD";
+            this.txtAnnoBD.Size = new System.Drawing.Size(60, 20);
+            this.txtAnnoBD.TabIndex = 17;
+            this.txtAnnoBD.Text = "2017";
+            // 
+            // btnBilancioDemografico
+            // 
+            this.btnBilancioDemografico.Location = new System.Drawing.Point(15, 267);
+            this.btnBilancioDemografico.Name = "btnBilancioDemografico";
+            this.btnBilancioDemografico.Size = new System.Drawing.Size(228, 40);
+            this.btnBilancioDemografico.TabIndex = 16;
+            this.btnBilancioDemografico.Text = "BilancioDemografico";
+            this.btnBilancioDemografico.UseVisualStyleBackColor = true;
+            this.btnBilancioDemografico.Click += new System.EventHandler(this.btnBilancioDemografico_Click);
             // 
             // label34
             // 
@@ -1221,10 +1273,6 @@
             // 
             // tabPage12
             // 
-            this.tabPage12.Controls.Add(this.chkLintNS01);
-            this.tabPage12.Controls.Add(this.label12);
-            this.tabPage12.Controls.Add(this.textLintCat);
-            this.tabPage12.Controls.Add(this.button32);
             this.tabPage12.Controls.Add(this.button23);
             this.tabPage12.Controls.Add(this.button14);
             this.tabPage12.Location = new System.Drawing.Point(4, 40);
@@ -1233,43 +1281,6 @@
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "Wikipedia Report";
             this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // chkLintNS01
-            // 
-            this.chkLintNS01.AutoSize = true;
-            this.chkLintNS01.Location = new System.Drawing.Point(439, 245);
-            this.chkLintNS01.Name = "chkLintNS01";
-            this.chkLintNS01.Size = new System.Drawing.Size(67, 17);
-            this.chkLintNS01.TabIndex = 10;
-            this.chkLintNS01.Text = "Only ns0";
-            this.chkLintNS01.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(202, 224);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 13);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Lint error category";
-            // 
-            // textLintCat
-            // 
-            this.textLintCat.Location = new System.Drawing.Point(202, 245);
-            this.textLintCat.Name = "textLintCat";
-            this.textLintCat.Size = new System.Drawing.Size(105, 20);
-            this.textLintCat.TabIndex = 8;
-            this.textLintCat.Text = "missing-end-tag";
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(13, 224);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(183, 41);
-            this.button32.TabIndex = 7;
-            this.button32.Text = "Lint error";
-            this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // button23
             // 
@@ -1362,6 +1373,45 @@
             this.tabWD.TabIndex = 14;
             this.tabWD.Text = "Wikidata";
             this.tabWD.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(12, 51);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(265, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete items (need an Admin user)";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnCreatingItems
+            // 
+            this.btnCreatingItems.Location = new System.Drawing.Point(12, 13);
+            this.btnCreatingItems.Name = "btnCreatingItems";
+            this.btnCreatingItems.Size = new System.Drawing.Size(156, 23);
+            this.btnCreatingItems.TabIndex = 1;
+            this.btnCreatingItems.Text = "Create new empty items";
+            this.btnCreatingItems.UseVisualStyleBackColor = true;
+            this.btnCreatingItems.Click += new System.EventHandler(this.btnCreatingItems_Click);
+            // 
+            // tabWP
+            // 
+            this.tabWP.Controls.Add(this.btnListLintError);
+            this.tabWP.Location = new System.Drawing.Point(4, 40);
+            this.tabWP.Name = "tabWP";
+            this.tabWP.Size = new System.Drawing.Size(577, 680);
+            this.tabWP.TabIndex = 15;
+            this.tabWP.Text = "Wikiepdia";
+            this.tabWP.UseVisualStyleBackColor = true;
+            // 
+            // btnListLintError
+            // 
+            this.btnListLintError.Location = new System.Drawing.Point(14, 12);
+            this.btnListLintError.Name = "btnListLintError";
+            this.btnListLintError.Size = new System.Drawing.Size(156, 23);
+            this.btnListLintError.TabIndex = 2;
+            this.btnListLintError.Text = "Lint errors";
+            this.btnListLintError.UseVisualStyleBackColor = true;
+            this.btnListLintError.Click += new System.EventHandler(this.btnListLintError_Click);
             // 
             // statusMain
             // 
@@ -1457,44 +1507,15 @@
             this.btnMove.UseVisualStyleBackColor = true;
             this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
-            // btnCreatingItems
+            // button7
             // 
-            this.btnCreatingItems.Location = new System.Drawing.Point(12, 13);
-            this.btnCreatingItems.Name = "btnCreatingItems";
-            this.btnCreatingItems.Size = new System.Drawing.Size(156, 23);
-            this.btnCreatingItems.TabIndex = 1;
-            this.btnCreatingItems.Text = "Create new empty items";
-            this.btnCreatingItems.UseVisualStyleBackColor = true;
-            this.btnCreatingItems.Click += new System.EventHandler(this.btnCreatingItems_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(12, 51);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(265, 23);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "Delete items (need an Admin user)";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // tabWP
-            // 
-            this.tabWP.Controls.Add(this.btnListLintError);
-            this.tabWP.Location = new System.Drawing.Point(4, 40);
-            this.tabWP.Name = "tabWP";
-            this.tabWP.Size = new System.Drawing.Size(577, 680);
-            this.tabWP.TabIndex = 15;
-            this.tabWP.Text = "Wikiepdia";
-            this.tabWP.UseVisualStyleBackColor = true;
-            // 
-            // btnListLintError
-            // 
-            this.btnListLintError.Location = new System.Drawing.Point(14, 12);
-            this.btnListLintError.Name = "btnListLintError";
-            this.btnListLintError.Size = new System.Drawing.Size(156, 23);
-            this.btnListLintError.TabIndex = 2;
-            this.btnListLintError.Text = "Lint errors";
-            this.btnListLintError.UseVisualStyleBackColor = true;
-            this.btnListLintError.Click += new System.EventHandler(this.btnListLintError_Click);
+            this.button7.Location = new System.Drawing.Point(15, 326);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(228, 40);
+            this.button7.TabIndex = 21;
+            this.button7.Text = "BilancioDemografico 2";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // frmVBot
             // 
@@ -1530,14 +1551,13 @@
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
             this.tabPage12.ResumeLayout(false);
-            this.tabPage12.PerformLayout();
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabWD.ResumeLayout(false);
+            this.tabWP.ResumeLayout(false);
             this.statusMain.ResumeLayout(false);
             this.statusMain.PerformLayout();
-            this.tabWP.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1666,15 +1686,17 @@
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textLintCat;
-        private System.Windows.Forms.CheckBox chkLintNS01;
         private System.Windows.Forms.TabPage tabWD;
         private System.Windows.Forms.Button btnCreatingItems;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TabPage tabWP;
         private System.Windows.Forms.Button btnListLintError;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtMeseBD;
+        private System.Windows.Forms.TextBox txtAnnoBD;
+        private System.Windows.Forms.Button btnBilancioDemografico;
+        private System.Windows.Forms.Button button7;
     }
 }
 

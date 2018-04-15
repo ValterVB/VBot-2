@@ -243,5 +243,18 @@ namespace VBot
 			}
 		}
 
+        public static string BilancioDemografico(string anno, string mese, string Pro)
+        {
+            // http://demo.istat.it/bilmens2017gen/query1.php?&allrp=4&Pro=55&periodo=11
+            WebClient client = new WebClient();
+            client.Headers.Add("user-agent", Version);
+            Stream data = client.OpenRead("http://demo.istat.it/bilmens" + anno +"gen/query1.php?&allrp=4&Pro=" + Pro + "&periodo="+mese);
+            StreamReader reader = new StreamReader(data);
+            string respStr = reader.ReadToEnd();
+            data.Close();
+            reader.Close();
+
+            return respStr;
+        }
     }
 }

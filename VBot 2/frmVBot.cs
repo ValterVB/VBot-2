@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Net;
 using System.Xml;
 
+
 namespace VBot
 {
     public partial class frmVBot : Form
@@ -1526,55 +1527,149 @@ namespace VBot
             }
         }
 
-        private void button32_Click(object sender, EventArgs e)
+        private void btnBilancioDemografico_Click(object sender, EventArgs e)
         {
-            // Risultato in https://it.wikipedia.org/wiki/Utente:ValterVB/123
+            string Anno = txtAnnoBD.Text;
+            string Mese = txtMeseBD.Text;
+            string Title = "";
+            string res = "";
+            res = "local data = {}" + Environment.NewLine + Environment.NewLine; ;
+            res += "data.popolazione={" + Environment.NewLine;
+
+            for (int i = 1; i <= 112; i++)
+            {
+                string result = ListGenerator.BilancioDemografico(Anno, Mese, i.ToString());
+                if (result.IndexOf("Bilancio demografico")!=-1)
+                {
+                    int from = 0;
+                    int to = 0;
+                    from = result.IndexOf("<table");
+                    to = result.IndexOf("</table>", from);
+                    string table1 = result.Substring(from, to - from);
+                    if (Title == "")
+                    {
+                        from = table1.IndexOf("<b>");
+                        to = table1.IndexOf("<br>");
+                        Title = table1.Substring(from + 3, to - from - 3);
+                    }
+
+                    from = result.IndexOf("<table", result.IndexOf("</table>"));
+                    to = result.IndexOf("</table>", from);
+                    string table2 = result.Substring(from, to - from + 8);
+
+                    string RowExpression = "<tr[^>]*>(.*?)</tr>";
+                    string ColumnExpression = "<td[^>]*>(.*?)</td>";
+
+                    MatchCollection Rows = Regex.Matches(table2,
+                        RowExpression,
+                        RegexOptions.Singleline |
+                        RegexOptions.Multiline | RegexOptions.IgnoreCase);
+                    foreach (Match Row in Rows)
+                    {
+                        if (Row.Value.IndexOf("<br>Comune</td>") == -1)
+                        {
+                            if (Row.Value.IndexOf("Maschi") != -1) { break; }
+                            if (Row.Value.IndexOf("Femmine") != -1) { break; }
+
+                            MatchCollection Columns = Regex.Matches(Row.Value,
+                            ColumnExpression,
+                            RegexOptions.Singleline |
+                            RegexOptions.Multiline |
+                            RegexOptions.IgnoreCase);
+                            
+                            if (Columns[0].Groups[1].Captures[0].Value != "Totale")
+                            {
+                                string tmp = "[\"" + Columns[0].Groups[1].ToString() + "\"]={\"";
+                                tmp += Columns[10].Groups[1].ToString() + "\",\"";
+                                tmp += Columns[1].Groups[1].ToString() + "\"}," + Environment.NewLine;
+                                res += tmp;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    txtMessage.AppendText(i.ToString() + ": " + result);
+                }
+            }
+            
+            res = res.Remove(res.LastIndexOf(","));
+            res += Environment.NewLine;
+            res += "}" + Environment.NewLine;
+
+            //res += "data.nota=\"[http://demo.istat.it/bilmens" + Anno + "gen/query1.php?&allrp=4&Pro=55&periodo=" + Mese + " Dato Istat] - " + title + "\"" + Environment.NewLine;
+            res += "data.nota=\"[http://demo.istat.it/bilmens" + Anno + "gen/index.html Dato Istat] - " + Title + "\"" + Environment.NewLine + Environment.NewLine;
+
+            res += "return data" + Environment.NewLine;
+            txtOut.Text = res;
 
             Site WP = new Site("https://it.wikipedia.org", user, password);
+            WP.SavePage("Modulo:Sandbox/ValterVB/Bilancio/Data", res, "Aggiornamento");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string Anno = txtAnnoBD.Text;
+            string Mese = txtMeseBD.Text;
+            string Title = "";
             string res = "";
-            if (chkLintNS01.Checked)
+            res = "" ;
+
+            for (int i = 1; i <= 113; i++)
             {
-                res = WP.LintError("missing-end-tag","50","0");
-            }
-            else
-            {
-                res = WP.LintError("missing-end-tag","50");
-            }
-
-            string Out = "";
-
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(res);
-            foreach (XmlNode node in doc.SelectNodes("/api/query/linterrors/_v[@title]"))
-            {
-                string title = node.Attributes["title"].Value ;
-
-                string range = node.SelectSingleNode("location").InnerXml;
-                range = range.Replace("</_v><_v>","\t").Replace("<_v>", "").Replace("</_v>", "");
-                int From = Convert.ToInt32(range.Split('\t')[0]);
-                int To = Convert.ToInt32(range.Split('\t')[1]);
-
-                string parametro = node.SelectSingleNode("params").Attributes["name"].Value;
-
-                string template = "";
-                if (node.SelectSingleNode("templateInfo").Attributes["name"] != null)
+                string result = ListGenerator.BilancioDemografico(Anno, Mese, i.ToString());
+                if (result.IndexOf("Bilancio demografico") != -1)
                 {
-                    template = node.SelectSingleNode("templateInfo").Attributes["name"].Value;
+                    int from = 0;
+                    int to = 0;
+                    from = result.IndexOf("<table");
+                    to = result.IndexOf("</table>", from);
+                    string table1 = result.Substring(from, to - from);
+                    if (Title == "")
+                    {
+                        from = table1.IndexOf("<b>");
+                        to = table1.IndexOf("<br>");
+                        Title = table1.Substring(from + 3, to - from - 3);
+                    }
+
+                    from = result.IndexOf("<table", result.IndexOf("</table>"));
+                    to = result.IndexOf("</table>", from);
+                    string table2 = result.Substring(from, to - from + 8);
+
+                    string RowExpression = "<tr[^>]*>(.*?)</tr>";
+                    string ColumnExpression = "<td[^>]*>(.*?)</td>";
+
+                    MatchCollection Rows = Regex.Matches(table2,
+                        RowExpression,
+                        RegexOptions.Singleline |
+                        RegexOptions.Multiline | RegexOptions.IgnoreCase);
+                    foreach (Match Row in Rows)
+                    {
+                        if (Row.Value.IndexOf("<br>Comune</td>") == -1)
+                        {
+                            if (Row.Value.IndexOf("Maschi") != -1) { break; }
+                            if (Row.Value.IndexOf("Femmine") != -1) { break; }
+
+                            MatchCollection Columns = Regex.Matches(Row.Value,
+                            ColumnExpression,
+                            RegexOptions.Singleline |
+                            RegexOptions.Multiline |
+                            RegexOptions.IgnoreCase);
+
+                            if (Columns[0].Groups[1].Captures[0].Value != "Totale")
+                            {
+                                string tmp = Columns[0].Groups[1].ToString() + '\t' +  Columns[10].Groups[1].ToString() + '\t' +  Columns[1].Groups[1].ToString() + '\t' + "http://demo.istat.it/bilmens" + Anno + "gen/query1.php?&allrp=4&Pro=" + i.ToString() + "&periodo=" + Mese + Environment.NewLine;
+                                res += tmp;
+                            }
+                        }
+                    }
                 }
-
-                string strJson = WP.LoadWP(title);
-                Pages pages = JsonConvert.DeserializeObject<Pages>(strJson);
-                string testo = pages.query.FirstPageText;
-                string error = testo.Substring(From, To - From);
-                Out += "* [[" + title + "]]" + Environment.NewLine;
-                Out += "** Parametro: " + parametro + Environment.NewLine;
-                Out += "** Template: " + template + Environment.NewLine;
-                Out += "** Da carattere: " + From + Environment.NewLine;
-                Out += "** A carattere: " + To + Environment.NewLine;
-                Out += "** <nowiki>" + error + "</nowiki>" + Environment.NewLine ;
+                else
+                {
+                    txtMessage.AppendText(i.ToString() + ": " + result);
+                }
+                txtOut.Text = res;
             }
-            txtOut.Text = Out;
-
         }
     }
 }
